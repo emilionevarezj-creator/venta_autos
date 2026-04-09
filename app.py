@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
+
+st.set_page_config(layout="wide")
+
 st.title("Mi Dashboard de Vehículos")
 col1, col2 = st.columns(2)
 car_data = pd.read_csv('notebooks/vehicles_us.csv')
@@ -18,7 +21,7 @@ with col1:
         st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-    st.header("Gráfico de Dispersión")
+    st.header("Dispersión")
     disp_button = st.button('Construir Dispersion')
 
     if disp_button:
