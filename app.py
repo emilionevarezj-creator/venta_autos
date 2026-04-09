@@ -5,9 +5,9 @@ import plotly.graph_objects as go
 st.title("Mi Dashboard de Vehículos")
 car_data = pd.read_csv('notebooks/vehicles_us.csv')
 
-hist_button = st.button('Contruir Histograma')
+build_histogram = st.checkbox('Construir un histograma')
 
-if hist_button:
+if build_histogram:
     st.write(
         'Creacion de un histograma para el conjunto de datos de anuncios de venta de coches')
     fig = go.Figure(data=[go.Histogram(x=car_data['odometer'])])
