@@ -5,12 +5,16 @@ import plotly.graph_objects as go
 
 st.set_page_config(layout="wide")
 
-st.title("Mi Dashboard de Vehículos")
+st.markdown("<h1 style='text-align: center;'>Mi Dashboard de Vehículos</h1>",
+            unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: gray;'>Análisis interactivo de datos de vehículos usados</h3>", unsafe_allow_html=True)
+
 col1, col2 = st.columns(2)
 car_data = pd.read_csv('notebooks/vehicles_us.csv')
 
 with col1:
-    st.header("Histograma")
+    st.markdown("<h2 style='text-align: center;'>Histograma</h2>",
+                unsafe_allow_html=True)
     build_histogram = st.checkbox('Construir un histograma')
 
     if build_histogram:
@@ -21,7 +25,8 @@ with col1:
         st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-    st.header("Dispersión")
+    st.markdown("<h2 style='text-align: center;'>Dispersión</h2>",
+                unsafe_allow_html=True)
     disp_button = st.button('Construir Dispersion')
 
     if disp_button:
