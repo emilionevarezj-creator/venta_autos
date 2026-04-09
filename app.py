@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
+st.title("Mi Dashboard de Vehículos")
 car_data = pd.read_csv('notebooks/vehicles_us.csv')
 
 hist_button = st.button('Contruir Histograma')
